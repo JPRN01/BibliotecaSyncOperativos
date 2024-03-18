@@ -18,7 +18,6 @@ void wait_semaphore(Semaphore *sem) {
 
     if (sem->count > 0) {
         sem->count--;
-        pthread_mutex_unlock(&sem->mutex);
     } else {
       WaitingThread wt;
       pthread_cond_init(&wt.cond, NULL);
